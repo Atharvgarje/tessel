@@ -1,0 +1,6 @@
+   {
+     "name": "Ramesh",
+     "email": "ramesh@mail.com",
+     "password": "mypassword123",
+     "city": "Pune"
+   }

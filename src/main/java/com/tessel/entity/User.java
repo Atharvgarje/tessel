@@ -8,13 +8,19 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Entity
 @Table(name = "users")
 @Getter
 @Setter
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
 public class User {
 	
 	@Id
@@ -30,9 +36,10 @@ public class User {
 	@Column(nullable = false)
 	private String passwordHash;
 	
-	@Column
+	@Column(nullable=false)
 	@Enumerated(EnumType.STRING)
-	private Role role;
+	@Builder.Default
+	private Role role=Role.RETAILER;
 	
 	@Column
 	private String city;
